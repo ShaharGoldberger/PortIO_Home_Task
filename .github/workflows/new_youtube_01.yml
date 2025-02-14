@@ -47,7 +47,7 @@ jobs:
           ORG_ID: ${{ secrets.ORG_ID }}
         run: |
           response=$(curl -s --request POST \
-            --url 'https://authorization-server.com/oauth2/token' \
+            --url 'https://api.getport.io/v1/auth/access_token' \
             --header 'Content-Type: application/x-www-form-urlencoded' \
             --data-urlencode 'grant_type=client_credentials' \
             --data-urlencode "client_id=$CLIENT_ID" \
