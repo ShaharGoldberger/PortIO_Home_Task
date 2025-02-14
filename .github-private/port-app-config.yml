@@ -3,15 +3,24 @@ resources:
     selector:
       query: 'true'
       files:
-        - path: '**/*playlist.json' # or .yaml
-        
+        - path: '**/*playlist.json'
     port:
       entity:
         mappings:
-          identifier: .file.path
-          title: .file.name
+          identifier: .id
+          title: .snippet.title
           blueprint: '"youtube_playlist"'
           properties:
-            project_name: .file.content.name
-            project_version: .file.content.version
-            license: .file.content.license
+            kind: .kind
+            etag: .etag
+            publishedAt: .snippet.publishedAt
+            channelId: .snippet.channelId
+            description: .snippet.description
+            thumbnails: .snippet.thumbnails
+            channelTitle: .snippet.channelTitle
+            defaultLanguage: .snippet.defaultLanguage
+            privacyStatus: .status.privacyStatus
+            podcastStatus: .status.podcastStatus
+            itemCount: .contentDetails.itemCount
+            embedHtml: .player.embedHtml
+            localizations: .localizations
