@@ -1,0 +1,480 @@
+{
+  "kind": "youtube#playlistItemListResponse",
+  "etag": "sPdcPM2V-14HTo4EnDQhXhX4HQ0",
+  "items": [
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "byz_HTSQ27ibCIrmKz0nPP8dAkM",
+      "id": "UExUdV9tbzN5NDJOM09aOXk5QzdGZVdGV2VhcUNUSks1Ni4zMDg5MkQ5MEVDMEM1NTg2",
+      "snippet": {
+        "publishedAt": "2019-04-16T13:41:55Z",
+        "channelId": "UCN9HPn2fq-NL8M5_kp4RWZQ",
+        "title": "LSD - No New Friends (Official Video) ft. Labrinth, Sia, Diplo",
+        "description": "Labrinth, Sia & Diplo present LSD – No New Friends (Official Video)\n\nSubscribe to Diplo YouTube Channel - http://diplo.fm/YouTube\n \nStream No New Friends: http://smarturl.it/LSD-album \nSpotify - http://smarturl.it/LSD-album/spotify \nApple Music - http://smarturl.it/LSD-album/applemusic\niTunes - http://smarturl.it/LSD-album/itunes \nGoogle Play - http://smarturl.it/LSD-album/googleplay \nAmazon - http://smarturl.it/LSD-album/az\n\n\nLearn more about LSD: http://droppingLSD.com\n\nLyrics:\nOh, you the queen, you're the king\nWe got our aces out\nYou the queen, you're the king\nWe got our aces out\nRoll the dice on tonight, go and roll 'em out (Huh)\nGive me more than enough to go smile about (Ayy, ayy)\n\nI got all I need in a world of doubt\nWe got our champagne dreams in an endless drought\nWe are the kings and queens seeking our aces out\nWe got all we need, no new friends now\n\nLa-la-la-la, la-la-la-la-la-la-la\nNo new friends\nLa-la-la-la, la-la-la-la-la-la-la, ah-la-la-la\nNo new friends\nLa-la-la-la, la-la-la-la-la-la-la\nNo new friends\nLa-la-la-la, la-la-la-la-la-la-la\nNo new friends\n\nHey, follow me, I'll follow you\nI ain't foldin' now\nHolla me, I'll holla you\nNo, I ain't holdin' out\nRoll the dice on tonight, go and roll 'em out (Huh)\nGive me more than enough to go smile about (Ayy, ayy)\n\nI got all I need in a world of doubt\nWe got our champagne dreams in an endless drought\nWe are the kings and queens seeking our aces out\nWe got all we need, no new friends now\n\nLa-la-la-la, la-la-la-la-la-la-la\nNo new friends\nLa-la-la-la, la-la-la-la-la-la-la, ah-la-la-la\nNo new friends\nLa-la-la-la, la-la-la-la-la-la-la\nNo new friends\nLa-la-la-la, la-la-la-la-la-la-la, ah\n\nOh, when the sun goes down\nAnd when it comes back up\nWe got our aces out\nWe got our aces out\nOh, when the sun goes down\nAnd when it comes back up\nWe got our aces out\nWe got our aces out (Woo!)\n\nI got all I need in a world of doubt\nWe got our champagne dreams in an endless drought\nWe are the kings and queens seeking our aces out\nWe got all we need, no new friends now\n\nLa-la-la-la, la-la-la-la-la-la-la\nYeah, we got our champagne dreams\nLa-la-la-la, la-la-la-la-la-la-la, ah-la-la-la\nYeah\nLa-la-la-la, la-la-la-la-la-la-la\nOur aces out\nLa-la-la-la, la-la-la-la-la-la-la\nNo new friends\n\nStarring: Maddie Ziegler, Labrinth, Sia, Diplo\nDirector: Dano Cerny\nChoreographer: Ryan Heffington\nProducers: Michelle Larkin, Missy Galanida, Isaac Rice\nDP: Bryant Jansen\nArt: John Richoux\nEdit: Jennifer Kennedy\nColor: Marshall Plante\nVFX: Ethan Chancer\nWardrobe: Samantha Burkhart\n \nFollow LSD\nOfficial Website: http://droppingLSD.com\nFacebook: https://www.facebook.com/droppingLSD \nSpotify: http://smarturl.it/LSD-Spotify\n\nFollow Diplo\nFacebook: https://www.facebook.com/diplo\nTwitter: https://twitter.com/diplo\nInstagram: https://www.instagram.com/diplo\nSoundCloud: https://soundcloud.com/diplo\n \nFollow Sia\nFacebook: https://www.facebook.com/SiaMusic\nTwitter: https://twitter.com/Sia\nInstagram: https://www.instagram.com/siamusic\nSoundCloud: https://soundcloud.com/siamusic\n\nFollow Labrinth\nFacebook: https://www.facebook.com/Labrinth\nTwitter: https://twitter.com/labrinth\nInstagram: https://www.instagram.com/labrinth\nSoundCloud: https://soundcloud.com/labrinth\n\n#Sia\n#Diplo\n#Labrinth\n#LSD\n#NoNewFriends",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/kkUIdK9eaIk/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/kkUIdK9eaIk/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/kkUIdK9eaIk/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/kkUIdK9eaIk/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/kkUIdK9eaIk/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Sia",
+        "playlistId": "PLTu_mo3y42N3OZ9y9C7FeWFWeaqCTJK56",
+        "position": 0,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "kkUIdK9eaIk"
+        },
+        "videoOwnerChannelTitle": "Diplo",
+        "videoOwnerChannelId": "UCKp7UVaoVuiW1qtyPLPVFMQ"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "bEnjZtZKW4sJSfFMcb3GyKVAcIw",
+      "id": "UExUdV9tbzN5NDJOM09aOXk5QzdGZVdGV2VhcUNUSks1Ni5GNjNDRDREMDQxOThCMDQ2",
+      "snippet": {
+        "publishedAt": "2019-04-12T04:12:01Z",
+        "channelId": "UCN9HPn2fq-NL8M5_kp4RWZQ",
+        "title": "LSD - Welcome to the Wonderful World of (Official Audio) ft. Sia, Diplo, Labrinth",
+        "description": "Labrinth, Sia & Diplo present LSD - Welcome to the Wonderful World of\n\nStream “Welcome to the Wonderful World of“ now: https://smarturl.it/LSD-album \n\nAmazon - https://smarturl.it/LSD-album/az\nApple Music - https://smarturl.it/LSD-album/applemusic\nGoogle Play - https://smarturl.it/LSD-album/googleplay \niTunes - https://smarturl.it/LSD-album/itunes \nSpotify - https://smarturl.it/LSD-album/spotify\n\nLearn more about LSD: https://droppingLSD.com \n\nFollow LSD\nOfficial Website: https://droppingLSD.com \nFacebook: https://www.facebook.com/droppingLSD  \nSpotify: https://smarturl.it/LSD-Spotify \n \nFollow Sia\nFacebook: https://www.facebook.com/SiaMusic \nTwitter: https://twitter.com/Sia \nInstagram: https://www.instagram.com/siamusic \nSoundCloud: https://soundcloud.com/siamusic \n\nFollow Diplo\nFacebook: https://www.facebook.com/diplo \nTwitter: https://twitter.com/diplo \nInstagram: https://www.instagram.com/diplo \nSoundCloud: https://soundcloud.com/diplo \n\nFollow Labrinth\nFacebook: https://www.facebook.com/Labrinth \nTwitter: https://twitter.com/labrinth \nInstagram: https://www.instagram.com/labrinth \nSoundCloud: https://soundcloud.com/labrinth \n\n#Labrinth #Sia #Diplo #LabrinthSiaDiploPresentLSD",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/doelku0dqoI/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/doelku0dqoI/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/doelku0dqoI/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/doelku0dqoI/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/doelku0dqoI/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Sia",
+        "playlistId": "PLTu_mo3y42N3OZ9y9C7FeWFWeaqCTJK56",
+        "position": 1,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "doelku0dqoI"
+        },
+        "videoOwnerChannelTitle": "SiaVEVO",
+        "videoOwnerChannelId": "UCmKdSrwf1e8coqAzUsrVHZw"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "VWg_zN03cWOJFIJ5ecwCmzKQuKI",
+      "id": "UExUdV9tbzN5NDJOM09aOXk5QzdGZVdGV2VhcUNUSks1Ni5EMEEwRUY5M0RDRTU3NDJC",
+      "snippet": {
+        "publishedAt": "2019-04-12T04:18:40Z",
+        "channelId": "UCN9HPn2fq-NL8M5_kp4RWZQ",
+        "title": "LSD - Angel in Your Eyes (Official Audio) ft. Sia, Diplo, Labrinth",
+        "description": "Labrinth, Sia & Diplo present LSD - Angel in Your Eyes\n\nStream “Angel in Your Eyes“ now: https://smarturl.it/LSD-album \n\nAmazon - https://smarturl.it/LSD-album/az\nApple Music - https://smarturl.it/LSD-album/applemusic\nGoogle Play - https://smarturl.it/LSD-album/googleplay \niTunes - https://smarturl.it/LSD-album/itunes \nSpotify - https://smarturl.it/LSD-album/spotify\n\nLearn more about LSD: https://droppingLSD.com \n\nFollow LSD\nOfficial Website: https://droppingLSD.com \nFacebook: https://www.facebook.com/droppingLSD  \nSpotify: https://smarturl.it/LSD-Spotify \n \nFollow Sia\nFacebook: https://www.facebook.com/SiaMusic \nTwitter: https://twitter.com/Sia \nInstagram: https://www.instagram.com/siamusic \nSoundCloud: https://soundcloud.com/siamusic \n\nFollow Diplo\nFacebook: https://www.facebook.com/diplo \nTwitter: https://twitter.com/diplo \nInstagram: https://www.instagram.com/diplo \nSoundCloud: https://soundcloud.com/diplo \n\nFollow Labrinth\nFacebook: https://www.facebook.com/Labrinth \nTwitter: https://twitter.com/labrinth \nInstagram: https://www.instagram.com/labrinth \nSoundCloud: https://soundcloud.com/labrinth \n\n#Labrinth #Sia #Diplo #LabrinthSiaDiploPresentLSD",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/F-7aA6_9n5U/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/F-7aA6_9n5U/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/F-7aA6_9n5U/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/F-7aA6_9n5U/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/F-7aA6_9n5U/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Sia",
+        "playlistId": "PLTu_mo3y42N3OZ9y9C7FeWFWeaqCTJK56",
+        "position": 2,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "F-7aA6_9n5U"
+        },
+        "videoOwnerChannelTitle": "SiaVEVO",
+        "videoOwnerChannelId": "UCmKdSrwf1e8coqAzUsrVHZw"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "bdv5C61MS22q9nVr65HO6ssZSlo",
+      "id": "UExUdV9tbzN5NDJOM09aOXk5QzdGZVdGV2VhcUNUSks1Ni41NkI0NEY2RDEwNTU3Q0M2",
+      "snippet": {
+        "publishedAt": "2018-05-04T00:15:48Z",
+        "channelId": "UCN9HPn2fq-NL8M5_kp4RWZQ",
+        "title": "LSD - Genius ft. Sia, Diplo, Labrinth",
+        "description": "Labrinth, Sia & Diplo present LSD - Genius (Official Video)\n\nStream LSD’s Genius: http://smarturl.it/LSD-Genius\nSpotify: http://smarturl.it/LSD-Genius/Spotify\niTunes:  http://smarturl.it/LSD-Genius/iTunes\nApple Music:  http://smarturl.it/LSD-Genius/AppleMusic\nGoogle Play: http://smarturl.it/LSD-Genius/GooglePlay\nAmazon Music: http://smarturl.it/LSD-Genius/Az\nDeezer: http://smarturl.it/LSD-Genius/Deezer\n\nLearn more about LSD: http://droppingLSD.com\n \nLyrics:\nLabrinth..\nDo you think I’m stupid\nDo you think I’m bat shit crazy having you on my mind\nDo you think I’m helpless\nMy algebra gone equal you every time\n \nDo you think I’m calling\nDo you think I’m calling out your name every night\nGirl I have fallen for you\n \nWhat what you say\n \nOh my god\nBaby, baby don’t you see\nI got everything you need\nOnly a genius could love a woman like she\n \nOh my god\nBaby, baby don’t you see\nI got everything you need\nOnly a genius could love a woman like she\n \nI’m a ge- ge- ge- ge- ge- ge - genius\nA ge- ge- ge- ge- ge- ge - genius\nA ge- ge- ge- ge- ge- ge - genius\n \nHe’s a genius\n‘Cuz I love a woman like you\n \nI’m a ge- ge- ge- ge- ge- ge - genius\nA ge- ge- ge- ge- ge- ge - genius\nA ge- ge- ge- ge- ge- ge - genius\n \nHe’s a genius\n‘Cuz I love a woman like you\n \nSia…\n \nOh You’ll be my Einstein, my Newton, my Galileo, and my Hawking\nBoy put that pep in my step\nPut your arm around my neck while I’m walking\nPlease understand, Yeah I have fallen for you\n \nWhat what you say\n \nOh my god\nBaby, baby don’t you see\nI got everything you need\nOnly a genius could love a woman like me\n \nI’m sayin’ oh my god\nBaby, baby don’t you see\nI got everything you need\nOnly a genius could love a woman like me\n \nI’m a ge- ge- ge- ge- ge- ge- genius\nA ge- ge- ge- ge- ge- ge-genius\nA ge- ge- ge- ge- ge- ge- genius\n \nHe’s a genius\nCuz I love a woman like you\n \nI’m a ge- ge- ge- ge- ge- ge- genius\nA ge- ge- ge- ge- ge- ge-genius\nA a ge- ge- ge- ge- ge- ge - genius\n \nHe’s genius…\n‘Cuz I love a woman like you\n \nOh my god\nDot the I’s and cross the T’s\nI got everything you need\nWell…\nOnly a genius could love a woman like me\n \nOh my god\nYou’re the lock and I’m the key\nI got everything you need\nWell\nOnly a genius could love a woman like me\n \n‘Cuz I love a woman like you\nHe’s genius…\n‘Cuz I love a woman like you\n \n\nCredits:\nDirector: Ben Jones\nAnimation: Bento Box Entertainment\nIllustration by Gabriel Alcala\n  \n \nFollow LSD\nOfficial Website: http://droppingLSD.com\nFacebook: https://www.facebook.com/droppingLSD \nSpotify: http://smarturl.it/LSD-Spotify\n \nFollow Sia\nFacebook: https://www.facebook.com/SiaMusic\nTwitter: https://twitter.com/Sia\nInstagram: https://www.instagram.com/siamusic\nSoundCloud: https://soundcloud.com/siamusic\n\nFollow Diplo\nFacebook: https://www.facebook.com/diplo\nTwitter: https://twitter.com/diplo\nInstagram: https://www.instagram.com/diplo\nSoundCloud: https://soundcloud.com/diplo\n\nFollow Labrinth\nFacebook: https://www.facebook.com/Labrinth\nTwitter: https://twitter.com/labrinth\nInstagram: https://www.instagram.com/labrinth\nSoundCloud: https://soundcloud.com/labrinth",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/HhoATZ1Imtw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/HhoATZ1Imtw/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/HhoATZ1Imtw/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/HhoATZ1Imtw/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/HhoATZ1Imtw/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Sia",
+        "playlistId": "PLTu_mo3y42N3OZ9y9C7FeWFWeaqCTJK56",
+        "position": 3,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "HhoATZ1Imtw"
+        },
+        "videoOwnerChannelTitle": "SiaVEVO",
+        "videoOwnerChannelId": "UCmKdSrwf1e8coqAzUsrVHZw"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "HkKJJ9iGOoS7pca1-o58sWvprD4",
+      "id": "UExUdV9tbzN5NDJOM09aOXk5QzdGZVdGV2VhcUNUSks1Ni4yODlGNEE0NkRGMEEzMEQy",
+      "snippet": {
+        "publishedAt": "2018-05-10T12:16:28Z",
+        "channelId": "UCN9HPn2fq-NL8M5_kp4RWZQ",
+        "title": "LSD - Audio (Official Video) ft. Sia, Diplo, Labrinth",
+        "description": "Labrinth, Sia & Diplo present LSD - Audio (Official Video)\n\nStream LSD’s Audio: http://smarturl.it/LSD-Audio\nSpotify: http://smarturl.it/LSD-Audio/Spotify\niTunes: http://smarturl.it/LSD-Audio/iTunes\nApple Music:  http://smarturl.it/LSD-Audio/AppleMusic\nGoogle Play: http://smarturl.it/LSD-Audio/GooglePlay\nAmazon Music: http://smarturl.it/LSD-Audio/Az\nDeezer http://smarturl.it/LSD-Audio/Deezer\n\nLearn more about LSD: http://droppingLSD.com\n \nLyrics:\n(Sia)\nWe got a ride\nWe got the night\nI got the bottle\nyou got the light\nwe got the stars\nWe got audio\n \nwe’re gonna fly\nwe’re getting high\nyou got the moondust\ni got the sky\nwe got the stars\nwe got audio\n \nMake the bomb bomb beat I’ll give you melody\nMake the bomb bomb beat I’ll give you melody\nMake the song so sweet you gone come home with me\nOh\nMake the bomb bomb beat I’ll give you melody\nMake the bomb bomb beat I’ll give you melody\nMake the song so sweet you gone come home with me\nOh\n \nPlay that Audio\nPlay that Audio\n \n(Labrinth) \nwe got the heart\nwe got the soul\njust when the worlds saying they got no hope\nhere comes the love\nwe got audio\nI’m flyin high super hero\nS on my chest with my Marilyn Monroe\nFeel like a star\nCuz we got audio\n \nMake the bomb bomb beat I’ll give you melody\nMake the bomb bomb beat I’ll give you melody\nMake the song so sweet you gone come home with me\nOh\nMake the bomb bomb beat I’ll give you melody\nMake the bomb bomb beat I’ll give you melody\nMake the song so sweet you gone come home with me\nOh \n \nPlay that Audio\nPlay that Audio\n \nWe can’t live on…\nWithout the rhythm\nWe can’t live on….\nWithout the rhythm\nWe can’t live on…\nWithout the rhythm\nWe can’t live on….\nWithout the rhythm\nWe can’t live on…\nWithout the rhythm\nWe can’t live on….\nWithout the rhythm\nWe can’t live on…\nWithout the rhythm\nWe can’t live on….\nWithout the rhythm\n \n(Can't live without rhythm adlib)\n \nCredits:\nDirector: Ernest Desumbila\nProducers: Jeff Kopchia, Bryan Younce\n \nProd Co: FREENJOY, Inc.\nEP: Nathan Scherrer\n \nDP: Trevor Wineman\nChoreographer: Nina McNeely\n \nPost production: http://sauvage.tv\n \nSpecial Thanks: Iconoclast\n\n\nFollow LSD\nOfficial website: http://droppingLSD.com \nFacebook: https://www.facebook.com/lsdofficial \nSpotify: http://smarturl.it/LSD-Spotify\n\nFollow Sia\nFacebook: https://www.facebook.com/SiaMusic \nTwitter: https://twitter.com/Sia \nInstagram: https://www.instagram.com/siamusic \nSoundCloud: https://soundcloud.com/siamusic\n\nFollow Diplo\nFacebook: https://www.facebook.com/diplo\nTwitter: https://twitter.com/diplo\nInstagram: https://www.instagram.com/diplo/\nSoundCloud: https://soundcloud.com/diplo\n\nFollow Labrinth\nFacebook: https://www.facebook.com/Labrinth\nTwitter: https://twitter.com/labrinth \nInstagram: https://www.instagram.com/labrinth \nSoundCloud: https://soundcloud.com/labrinth",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/tjA7nAHOAww/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/tjA7nAHOAww/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/tjA7nAHOAww/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/tjA7nAHOAww/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/tjA7nAHOAww/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Sia",
+        "playlistId": "PLTu_mo3y42N3OZ9y9C7FeWFWeaqCTJK56",
+        "position": 4,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "tjA7nAHOAww"
+        },
+        "videoOwnerChannelTitle": "SiaVEVO",
+        "videoOwnerChannelId": "UCmKdSrwf1e8coqAzUsrVHZw"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "shkapYsXWb1UY56MxMiXyuPHWAU",
+      "id": "UExUdV9tbzN5NDJOM09aOXk5QzdGZVdGV2VhcUNUSks1Ni4wOTA3OTZBNzVEMTUzOTMy",
+      "snippet": {
+        "publishedAt": "2018-08-30T14:02:43Z",
+        "channelId": "UCN9HPn2fq-NL8M5_kp4RWZQ",
+        "title": "LSD - Thunderclouds (Official Video) ft. Sia, Diplo, Labrinth",
+        "description": "Labrinth, Sia & Diplo present LSD - Thunderclouds (Official Music Video)\nAlbum out April 12th. Pre-order, pre-save and pre-add now: http://smarturl.it/LSD-Album?iqid=NNFyoutube\n\nStream \"Thunderclouds\" now: http://smarturl.it/Thunderclouds?iqid=OfficialVideo\nSpotify: http://smarturl.it/Thunderclouds/Spotify?iqid=OfficialVideo\niTunes: http://smarturl.it/Thunderclouds/iTunes?iqid=OfficialVideo\nApple Music: http://smarturl.it/Thunderclouds/AppleMusic?iqid=OfficialVideo\nAmazon Music: http://smarturl.it/Thunderclouds/Az?iqid=OfficialVideo\n \nStarring: Maddie Ziegler, Labrinth, Sia, Diplo\nDirector: Ernest Desumbila\nProduced by Sauvage.TV\nProducers: Eva Laffitte, Bryan Younce\nDOP: Daniel Aranyo \nChoreography by Ryan Heffington\nPost Produced by Sauvage.TV\n\n\nLearn more about LSD and sign up for the official mailing list: http://droppingLSD.com\n\n\nLyrics:\n \nAll I need is one\nOne old man is enough\nBabe, you got it wrong\nPlease turn your fears into trust, to trust\n \nWhere’d the love go\nWhen all is said and done\n \nHey now I got your hands in the air\nI’mma go through your stuff\n \nWhere’d the love go\nYou put the running into run\n \nYou asking me to stay \nBut I never met a girl I could trust\n \nYou’re sayin’ those words\nLike you hate me now\nOur house is burning\nWhen you’re raised in hell\n \nHere in the ashes your soul cries out\nBut don’t be afraid of these thunderclouds\n \nThese thunderclouds oh no\nThese thunderclouds oh no no\n \nAll I need is love\nAll I need is a word\nAll I need is us\nYou turned nouns into verbs, to verbs\n \nWhere’d the love go\nWhen all is said and…\n \nHey now put your hands in the air \nI’mma go through your stuff\n \nWhere’d the love go\nYou put the running into run\nYou’re asking me to stay\nBut I never met a man I could trust\n \nYou’re sayin’ those words\nLike you hate me now\nOur house is burning\nWhen you’re raising hell\n \nHere in the ashes your soul cries out\nBut don’t be afraid of these thunderclouds\n \nThese thunderclouds,\nOh noo, these thunderclouds\nOhhh, these thunderclouds\n \nOhh no, these thunderclouds,\nOhh no, these thunderclouds\n \nThese thunderclouds\n \nYou’re sayin’ those words\nLike you hate me now\nOur house is burning\nWhen you’re raising hell\n \nHere in the ashes your soul cries out\nBut don’t be afraid of these thunderclouds\n \nThese thunderclouds,\nOh noo, these thunderclouds\nOhhh, these thunderclouds\n \nOhh no, these thunderclouds,\nOhh no no, these thunderclouds\n\n  \n \nFollow LSD\nOfficial Website: http://droppingLSD.com\nFacebook: https://www.facebook.com/droppingLSD \nSpotify: http://smarturl.it/LSD-Spotify\n \nFollow Sia\nFacebook: https://www.facebook.com/SiaMusic\nTwitter: https://twitter.com/Sia\nInstagram: https://www.instagram.com/siamusic\nSoundCloud: https://soundcloud.com/siamusic \n\nFollow Diplo\nFacebook: https://www.facebook.com/diplo\nTwitter: https://twitter.com/diplo\nInstagram: https://www.instagram.com/diplo\nSoundCloud: https://soundcloud.com/diplo\nYouTube: https://youtube.com/diplo\n\nFollow Labrinth\nFacebook: https://www.facebook.com/Labrinth\nTwitter: https://twitter.com/labrinth \nInstagram: https://www.instagram.com/labrinth\nSoundCloud: https://soundcloud.com/labrinth\nYouTube: https://youtube.com/labrinth",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/kg1BljLu9YY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/kg1BljLu9YY/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/kg1BljLu9YY/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/kg1BljLu9YY/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/kg1BljLu9YY/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Sia",
+        "playlistId": "PLTu_mo3y42N3OZ9y9C7FeWFWeaqCTJK56",
+        "position": 5,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "kg1BljLu9YY"
+        },
+        "videoOwnerChannelTitle": "SiaVEVO",
+        "videoOwnerChannelId": "UCmKdSrwf1e8coqAzUsrVHZw"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "n_Kuw1wfVxfGdOWXQ4I2u_ZtCXM",
+      "id": "UExUdV9tbzN5NDJOM09aOXk5QzdGZVdGV2VhcUNUSks1Ni41MzJCQjBCNDIyRkJDN0VD",
+      "snippet": {
+        "publishedAt": "2018-11-15T15:13:56Z",
+        "channelId": "UCN9HPn2fq-NL8M5_kp4RWZQ",
+        "title": "LSD - Mountains (Official Lyric Video) ft. Sia, Diplo, Labrinth",
+        "description": "Labrinth, Sia & Diplo present LSD - Mountains (Official Lyric Video)\nAlbum out April 12th. Pre-order, pre-save and pre-add now: http://smarturl.it/LSD-Album?iqid=NNFyoutube\n\nStream \"Mountains\" now: http://smarturl.it/LSD-Mountains?iqid=Lyric\nSpotify: http://smarturl.it/LSD-Mountains/Spotify?iqid=Lyric\niTunes: http://smarturl.it/LSD-Mountains/iTunes?iqid=Lyric\nApple Music: http://smarturl.it/LSD-Mountains/AppleMusic?iqid=Lyric\nAmazon Music: http://smarturl.it/LSD-Mountains/Az?iqid=Lyric\n\nLearn more about LSD and sign up for the official mailing list: http://droppingLSD.com\n \nDirector: Ben Jones \nProducer: James Merrill\n\n\nLyrics:\n\nHeck yeah breathe you\nDarling I see you \nI hope you see me too\nI want to know you \n \nHere ain’t no rocky ground \nYeah, I put one million down\nWhen you walk I kiss the ground\nHey, hey I love you\n \nSo what we gotta lose\nWhat we gotta move\nI move mountains \nI can see it through\nI can do it too\nLike a prophet \n \nWhat we gotta lose\nWhat we gotta move\nI move mountains \nI’d do anything for you\nAnything to move\nMove, mountains\n \nSing it!\n \nMountains, Mountains\nMountains, Mountains\nMountains, Mountains\nMountains, Mountains \n \nLord I am so blessed\n \n‘Cuz you come with interest\n \nFill up my pockets\nI want to own you\n \nSo what we gotta lose\nWhat we gotta move\nI move mountains\nI can see it through\nI can do it too\nLike a prophet \n \nWhat we gotta lose\nWhat we gotta move\nI move mountains\nI’d do anything for you\nAnything to move\nMove, mountains\n \nSing it!\n \nMountains, Mountains\nMountains, Mountains\nMountains, Mountains\nMountains, Mountains\n\n  \n \nFollow LSD\nOfficial Website: http://droppingLSD.com\nFacebook: https://www.facebook.com/droppingLSD \nSpotify: http://smarturl.it/LSD-Spotify\n \nFollow Sia\nFacebook: https://www.facebook.com/SiaMusic\nTwitter: https://twitter.com/Sia\nInstagram: https://www.instagram.com/siamusic\nSoundCloud: https://soundcloud.com/siamusic\n\nFollow Diplo\nFacebook: https://www.facebook.com/diplo\nTwitter: https://twitter.com/diplo\nInstagram: https://www.instagram.com/diplo\nSoundCloud: https://soundcloud.com/diplo\n\nFollow Labrinth\nFacebook: https://www.facebook.com/Labrinth\nTwitter: https://twitter.com/labrinth\nInstagram: https://www.instagram.com/labrinth\nSoundCloud: https://soundcloud.com/labrinth",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/I1-mcn1Hgh8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/I1-mcn1Hgh8/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/I1-mcn1Hgh8/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/I1-mcn1Hgh8/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/I1-mcn1Hgh8/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Sia",
+        "playlistId": "PLTu_mo3y42N3OZ9y9C7FeWFWeaqCTJK56",
+        "position": 6,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "I1-mcn1Hgh8"
+        },
+        "videoOwnerChannelTitle": "SiaVEVO",
+        "videoOwnerChannelId": "UCmKdSrwf1e8coqAzUsrVHZw"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "6XbTTlgbYWsH0jC4Nl_6JoimMHU",
+      "id": "UExUdV9tbzN5NDJOM09aOXk5QzdGZVdGV2VhcUNUSks1Ni41Mzk2QTAxMTkzNDk4MDhF",
+      "snippet": {
+        "publishedAt": "2019-05-06T16:32:54Z",
+        "channelId": "UCN9HPn2fq-NL8M5_kp4RWZQ",
+        "title": "LSD - Heaven Can Wait (Official Lyric Video) ft. Sia, Diplo, Labrinth",
+        "description": "Labrinth, Sia & Diplo present LSD - Heaven Can Wait (Official Lyric Video)\n\nStream Labrinth, Sia & Diplo present... LSD out now: https://smarturl.it/LSD-album \n\nAmazon - https://smarturl.it/LSD-album/az\nApple Music - https://smarturl.it/LSD-album/applemusic\nGoogle Play - https://smarturl.it/LSD-album/googleplay \niTunes - https://smarturl.it/LSD-album/itunes \nSpotify - https://smarturl.it/LSD-album/spotify\n\nLearn more about LSD: https://droppingLSD.com \n\nFollow LSD\nOfficial Website: https://droppingLSD.com \nFacebook: https://www.facebook.com/droppingLSD  \nSpotify: https://smarturl.it/LSD-Spotify \n \nFollow Sia\nFacebook: https://www.facebook.com/SiaMusic \nTwitter: https://twitter.com/Sia \nInstagram: https://www.instagram.com/siamusic \nSoundCloud: https://soundcloud.com/siamusic \n\nFollow Diplo\nFacebook: https://www.facebook.com/diplo \nTwitter: https://twitter.com/diplo \nInstagram: https://www.instagram.com/diplo \nSoundCloud: https://soundcloud.com/diplo \n\nFollow Labrinth\nFacebook: https://www.facebook.com/Labrinth \nTwitter: https://twitter.com/labrinth \nInstagram: https://www.instagram.com/labrinth \nSoundCloud: https://soundcloud.com/labrinth \n\n#Labrinth #Sia #Diplo #LabrinthSiaDiploPresentLSD",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/jGVTlBu6vJM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/jGVTlBu6vJM/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/jGVTlBu6vJM/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/jGVTlBu6vJM/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/jGVTlBu6vJM/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Sia",
+        "playlistId": "PLTu_mo3y42N3OZ9y9C7FeWFWeaqCTJK56",
+        "position": 7,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "jGVTlBu6vJM"
+        },
+        "videoOwnerChannelTitle": "SiaVEVO",
+        "videoOwnerChannelId": "UCmKdSrwf1e8coqAzUsrVHZw"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "CrDDkWk4lelc5hQSmnAFQ70Uw54",
+      "id": "UExUdV9tbzN5NDJOM09aOXk5QzdGZVdGV2VhcUNUSks1Ni45ODRDNTg0QjA4NkFBNkQy",
+      "snippet": {
+        "publishedAt": "2019-04-12T04:19:30Z",
+        "channelId": "UCN9HPn2fq-NL8M5_kp4RWZQ",
+        "title": "LSD - It's Time (Official Audio) ft. Sia, Diplo, Labrinth",
+        "description": "Labrinth, Sia & Diplo present LSD - It's Time\n\nStream “It's Time“ now: http://smarturl.it/LSD-album \n\nAmazon - http://smarturl.it/LSD-album/az\nApple Music - http://smarturl.it/LSD-album/applemusic\nGoogle Play - http://smarturl.it/LSD-album/googleplay \niTunes - http://smarturl.it/LSD-album/itunes \nSpotify - http://smarturl.it/LSD-album/spotify\n\nLearn more about LSD: http://droppingLSD.com \n\nFollow LSD\nOfficial Website: http://droppingLSD.com \nFacebook: https://www.facebook.com/droppingLSD  \nSpotify: http://smarturl.it/LSD-Spotify \n \nFollow Sia\nFacebook: https://www.facebook.com/SiaMusic \nTwitter: https://twitter.com/Sia \nInstagram: https://www.instagram.com/siamusic \nSoundCloud: https://soundcloud.com/siamusic \n\nFollow Diplo\nFacebook: https://www.facebook.com/diplo \nTwitter: https://twitter.com/diplo \nInstagram: https://www.instagram.com/diplo \nSoundCloud: https://soundcloud.com/diplo \n\nFollow Labrinth\nFacebook: https://www.facebook.com/Labrinth \nTwitter: https://twitter.com/labrinth \nInstagram: https://www.instagram.com/labrinth \nSoundCloud: https://soundcloud.com/labrinth \n\n#Labrinth #Sia #Diplo #LabrinthSiaDiploPresentLSD",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/AkdBZEGbAsE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/AkdBZEGbAsE/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/AkdBZEGbAsE/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/AkdBZEGbAsE/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/AkdBZEGbAsE/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Sia",
+        "playlistId": "PLTu_mo3y42N3OZ9y9C7FeWFWeaqCTJK56",
+        "position": 8,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "AkdBZEGbAsE"
+        },
+        "videoOwnerChannelTitle": "SiaVEVO",
+        "videoOwnerChannelId": "UCmKdSrwf1e8coqAzUsrVHZw"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "lezTDNsZm1JeTF8B22EJHuO3U3Q",
+      "id": "UExUdV9tbzN5NDJOM09aOXk5QzdGZVdGV2VhcUNUSks1Ni45NDk1REZENzhEMzU5MDQz",
+      "snippet": {
+        "publishedAt": "2019-03-14T12:26:40Z",
+        "channelId": "UCN9HPn2fq-NL8M5_kp4RWZQ",
+        "title": "LSD - Genius (Lil Wayne Remix) ft. Lil Wayne, Sia, Diplo, Labrinth",
+        "description": "Labrinth, Sia & Diplo present LSD - Genius (Lil Wayne Remix)\n\nAlbum out April 12th. Pre-order, pre-save and pre-add now: http://smarturl.it/LSD-Album?iqid=NNFyoutube\n\nStream LSD’s Genius (Lil Wayne Remix): http://smarturl.it/GeniusRemix\nSpotify: http://smarturl.it/GeniusRemix/Spotify\niTunes:  http://smarturl.it/GeniusRemix/iTunes\nApple Music:  http://smarturl.it/GeniusRemix/AppleMusic\nGoogle Play: http://smarturl.it/GeniusRemix/GooglePlay\nAmazon Music: http://smarturl.it/GeniusRemix/Az\nYouTube Music: http://smarturl.it/GeniusRemix/YouTubeMusic\nDeezer: http://smarturl.it/GeniusRemix/Deezer \n\nLearn more about LSD: http://droppingLSD.com\n \nLyrics:\n \nWayne...\nI’m a genius, under question, no question I’m really special\nUpper echelon when I bless you, molest you with intellectual, it’s a pleasure\nIt gets sexual, women lemon complexion, quick connections, then ejections, my love is so ambidextrous\nI’m a genius, and perfectionist, a specialist in the excesses with excellence, forever\nThere’s necklaces for irrelevance, in a room I’m the elephant, spellin’ it for the hell of it\nA B C D R U G, H I J K L S D\n \nOh my god\nBaby, baby don’t you see\nI got everything you need\nOnly a genius could love a woman like she\n \nOh my god\nBaby, baby don’t you see\nI got everything you need\nOnly a genius could love a woman like she\n \nI’m a ge- ge- ge- ge- ge- ge - genius\nA ge- ge- ge- ge- ge- ge - genius\nA ge- ge- ge- ge- ge- ge - genius\n \nHe’s a genius\n‘Cuz I love a woman like you\n \nI’m a ge- ge- ge- ge- ge- ge - genius\nA ge- ge- ge- ge- ge- ge - genius\nA ge- ge- ge- ge- ge- ge - genius\n \nHe’s a genius\n‘Cuz I love a woman like you\n \nSia…\n \nOh You’ll be my Einstein, my Newton, my Galileo, and my Hawking\nBoy put that pep in my step\nPut your arm around my neck while I’m walking\nPlease understand, Yeah I have fallen for you\n \nWhat what you say\n \nOh my god\nBaby, baby don’t you see\nI got everything you need\nOnly a genius could love a woman like me\n \nI’m sayin’ oh my god\nBaby, baby don’t you see\nI got everything you need\nOnly a genius could love a woman like me\n \nI’m a ge- ge- ge- ge- ge- ge- genius\nA ge- ge- ge- ge- ge- ge-genius\nA ge- ge- ge- ge- ge- ge- genius\n \nHe’s a genius\nCuz I love a woman like you\n \nI’m a ge- ge- ge- ge- ge- ge- genius\nA ge- ge- ge- ge- ge- ge-genius\nA a ge- ge- ge- ge- ge- ge - genius\n \nHe’s genius…\n‘Cuz I love a woman like you\n \nOh my god\nDot the I’s and cross the T’s\nI got everything you need\nWell…\nOnly a genius could love a woman like me\n \nOh my god\nYou’re the lock and I’m the key\nI got everything you need\nWell\nOnly a genius could love a woman like me\n \n‘Cuz I love a woman like you\nHe’s genius…\n‘Cuz I love a woman like you\n \n\nDirector: Ben Jones\nProducer: James Merrill\nAnimation: Bento Box Entertainment\nIllustration by Gabriel Alcala\n  \n \nFollow LSD\nOfficial Website: http://droppingLSD.com\nFacebook: https://www.facebook.com/droppingLSD \nSpotify: http://smarturl.it/LSD-Spotify\n \nFollow Sia\nFacebook: https://www.facebook.com/SiaMusic\nTwitter: https://twitter.com/Sia\nInstagram: https://www.instagram.com/siamusic\nSoundCloud: https://soundcloud.com/siamusic\n\nFollow Diplo\nFacebook: https://www.facebook.com/diplo\nTwitter: https://twitter.com/diplo\nInstagram: https://www.instagram.com/diplo\nSoundCloud: https://soundcloud.com/diplo\n\nFollow Labrinth\nFacebook: https://www.facebook.com/Labrinth\nTwitter: https://twitter.com/labrinth\nInstagram: https://www.instagram.com/labrinth\nSoundCloud: https://soundcloud.com/labrinth",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/yv5_CXdv1lc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/yv5_CXdv1lc/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/yv5_CXdv1lc/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/yv5_CXdv1lc/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/yv5_CXdv1lc/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Sia",
+        "playlistId": "PLTu_mo3y42N3OZ9y9C7FeWFWeaqCTJK56",
+        "position": 9,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "yv5_CXdv1lc"
+        },
+        "videoOwnerChannelTitle": "SiaVEVO",
+        "videoOwnerChannelId": "UCmKdSrwf1e8coqAzUsrVHZw"
+      }
+    }
+  ],
+  "pageInfo": {
+    "totalResults": 10,
+    "resultsPerPage": 50
+  }
+}
