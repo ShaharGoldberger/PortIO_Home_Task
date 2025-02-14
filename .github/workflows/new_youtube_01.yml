@@ -48,7 +48,7 @@ jobs:
           response=$(curl -s --request POST \
             --url 'https://api.getport.io/v1/auth/access_token' \
             --header 'Content-Type: application/json' \
-            --data '{"grantType":"client_credentials", "clientId":"'"$CLIENT_ID"'", "clientSecret":"'"$CLIENT_SECRET"'"}')
+            --data '{"clientId":"'"$CLIENT_ID"'", "clientSecret":"'"$CLIENT_SECRET"'"}')
       
           echo "Raw API response: $response"  # Debugging output
       
