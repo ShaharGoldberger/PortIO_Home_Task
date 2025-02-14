@@ -1,0 +1,125 @@
+name: Fetch and Update YouTube Playlists
+
+on:
+  schedule:
+    - cron: '0 12 * * *'  # Runs daily at 12:00 UTC
+  workflow_dispatch:  # Allows manual triggering
+
+jobs:
+  fetch-and-update-playlists:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Fetch YouTube Playlists JSON
+        run: |
+          mkdir -p playlists  # Ensure the folder exists
+
+          # Define playlists and custom filenames
+          declare -A PLAYLISTS
+          PLAYLISTS["PL5ErBr2d3QJH0kbwTQ7HSuzvBb4zIWzhy"]="oleg_berg_playlist.json"
+          PLAYLISTS["PLsvoYlzBrLFDoytiaDKjuCK6CNSRty38l"]="film_for_the_future_playlist.json"
+          PLAYLISTS["PLTu_mo3y42N3OZ9y9C7FeWFWeaqCTJK56"]="LSD_playlist.json"          
+          # Add more playlists as needed
+
+          API_KEY="${{ secrets.YOUTUBE_API_KEY }}"
+
+          for PLAYLIST_ID in "${!PLAYLISTS[@]}"; do
+            FILE_NAME="playlists/${PLAYLISTS[$PLAYLIST_ID]}"
+            echo "Fetching playlist: $PLAYLIST_ID -> $FILE_NAME"
+
+            RESPONSE=$(curl -s -H "Accept: application/json" \
+              "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=${PLAYLIST_ID}&key=${API_KEY}")
+
+            echo "$RESPONSE" | jq '.' > "$FILE_NAME"
+
+            # Check for API errors
+            if echo "$RESPONSE" | jq -e '.error' >/dev/null; then
+              echo "Error fetching playlist: $PLAYLIST_ID"
+              cat "$FILE_NAME"
+              exit 1
+            fi
+          done
+
+      - name: Commit and Push Changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add playlists/
+          git diff --cached --quiet || (git commit -m "Update YouTube playlists JSON" && \
+            git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git)
+
+      - name: Create/Update Port Entities
+        env:
+          PORT_API_KEY: ${{ secrets.PORT_API_KEY }}
+        run: |
+          for FILE in playlists/*.json; do
+            echo "Processing $FILE"
+
+            # Extract necessary fields from the JSON
+            KIND=$(jq -r '.kind' "$FILE")
+            ETAG=$(jq -r '.etag' "$FILE")
+            ID=$(jq -r '.id' "$FILE")
+            PUBLISHED_AT=$(jq -r '.snippet.publishedAt' "$FILE")
+            CHANNEL_ID=$(jq -r '.snippet.channelId' "$FILE")
+            TITLE=$(jq -r '.snippet.title' "$FILE")
+            DESCRIPTION=$(jq -r '.snippet.description' "$FILE")
+            THUMBNAILS=$(jq -r '.snippet.thumbnails' "$FILE" | jq -c '.')  # Compact JSON
+            CHANNEL_TITLE=$(jq -r '.snippet.channelTitle' "$FILE")
+            DEFAULT_LANGUAGE=$(jq -r '.snippet.defaultLanguage' "$FILE")
+            PRIVACY_STATUS=$(jq -r '.status.privacyStatus' "$FILE")
+            ITEM_COUNT=$(jq -r '.contentDetails.itemCount' "$FILE")
+
+            # Construct the JSON payload for Port
+            PORT_PAYLOAD=$(jq -n \
+              --arg kind "$KIND" \
+              --arg etag "$ETAG" \
+              --arg id "$ID" \
+              --arg publishedAt "$PUBLISHED_AT" \
+              --arg channelId "$CHANNEL_ID" \
+              --arg title "$TITLE" \
+              --arg description "$DESCRIPTION" \
+              --argjson thumbnails "$THUMBNAILS" \
+              --arg channelTitle "$CHANNEL_TITLE" \
+              --arg defaultLanguage "$DEFAULT_LANGUAGE" \
+              --arg privacyStatus "$PRIVACY_STATUS" \
+              --argjson itemCount "$ITEM_COUNT" \
+              '{
+                identifier: $id,
+                title: $title,
+                properties: {
+                  kind: $kind,
+                  etag: $etag,
+                  id: $id,
+                  publishedAt: $publishedAt,
+                  channelId: $channelId,
+                  title: $title,
+                  description: $description,
+                  thumbnails: $thumbnails,
+                  channelTitle: $channelTitle,
+                  defaultLanguage: $defaultLanguage,
+                  privacyStatus: $privacyStatus,
+                  itemCount: $itemCount
+                }
+              }')
+
+            # Send the request to Port's API
+            RESPONSE=$(curl -s -X POST "https://api.getport.io/v1/blueprints/youtube_playlist/entities" \
+              -H "Authorization: Bearer $PORT_API_KEY" \
+              -H "Content-Type: application/json" \
+              -d "$PORT_PAYLOAD")
+
+            # Check for API errors
+            if echo "$RESPONSE" | jq -e '.error' >/dev/null; then
+              echo "Error creating/updating entity for playlist ID: $ID"
+              echo "Response: $RESPONSE"
+              exit 1
+            else
+              echo "Successfully processed entity for playlist ID: $ID"
+            fi
+          done
