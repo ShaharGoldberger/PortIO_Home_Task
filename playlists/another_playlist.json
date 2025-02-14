@@ -1,14 +1,43 @@
 {
   "error": {
     "code": 403,
-    "message": "Method doesn't allow unregistered callers (callers without established identity). Please use API Key or other form of API consumer identity to call this API.",
+    "message": "YouTube Data API v3 has not been used in project 861006912172 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/youtube.googleapis.com/overview?project=861006912172 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.",
     "errors": [
       {
-        "message": "Method doesn't allow unregistered callers (callers without established identity). Please use API Key or other form of API consumer identity to call this API.",
-        "domain": "global",
-        "reason": "forbidden"
+        "message": "YouTube Data API v3 has not been used in project 861006912172 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/youtube.googleapis.com/overview?project=861006912172 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.",
+        "domain": "usageLimits",
+        "reason": "accessNotConfigured",
+        "extendedHelp": "https://console.developers.google.com"
       }
     ],
-    "status": "PERMISSION_DENIED"
+    "status": "PERMISSION_DENIED",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+        "reason": "SERVICE_DISABLED",
+        "domain": "googleapis.com",
+        "metadata": {
+          "containerInfo": "861006912172",
+          "service": "youtube.googleapis.com",
+          "consumer": "projects/861006912172",
+          "activationUrl": "https://console.developers.google.com/apis/api/youtube.googleapis.com/overview?project=861006912172",
+          "serviceTitle": "YouTube Data API v3"
+        }
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.LocalizedMessage",
+        "locale": "en-US",
+        "message": "YouTube Data API v3 has not been used in project 861006912172 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/youtube.googleapis.com/overview?project=861006912172 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.Help",
+        "links": [
+          {
+            "description": "Google developers console API activation",
+            "url": "https://console.developers.google.com/apis/api/youtube.googleapis.com/overview?project=861006912172"
+          }
+        ]
+      }
+    ]
   }
 }
