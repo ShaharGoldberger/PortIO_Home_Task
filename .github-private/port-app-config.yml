@@ -1,1 +1,17 @@
-
+resources:
+  - kind: file
+    selector:
+      query: 'true'
+      files:
+        - path: '**/*playlist.json' # or .yaml
+        
+    port:
+      entity:
+        mappings:
+          identifier: .file.path
+          title: .file.name
+          blueprint: '"youtube_playlist"'
+          properties:
+            project_name: .file.content.name
+            project_version: .file.content.version
+            license: .file.content.license
