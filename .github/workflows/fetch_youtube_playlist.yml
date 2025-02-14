@@ -1,4 +1,4 @@
-name: Fetch YouTube Playlist
+name: Fetch YouTube Playlists
 
 on:
   schedule:
@@ -6,26 +6,36 @@ on:
   workflow_dispatch:  # Allows manual triggering
 
 jobs:
-  fetch-playlist:
+  fetch-playlists:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Fetch YouTube Playlist JSON
+      - name: Fetch YouTube Playlists JSON
         run: |
-          PLAYLIST_ID="YOUR_PLAYLIST_ID"  # Replace with actual Playlist ID
-          API_KEY="${{ secrets.YOUTUBE_API_KEY }}"
-          OUTPUT_FILE="youtube_playlist.json"
+          mkdir -p playlists  # Ensure the folder exists
 
-          curl -s "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=${PLAYLIST_ID}&key=${API_KEY}" \
-            | jq '.' > $OUTPUT_FILE
+          # Define playlists and custom filenames
+          declare -A PLAYLISTS
+          PLAYLISTS["PL5ErBr2d3QJH0kbwTQ7HSuzvBb4zIWzhy"]="oleg_berg_playlist.json"
+          PLAYLISTS["ANOTHER_PLAYLIST_ID"]="another_playlist.json"
+
+          API_KEY="${{ secrets.YOUTUBE_API_KEY }}"
+
+          for PLAYLIST_ID in "${!PLAYLISTS[@]}"; do
+            FILE_NAME="playlists/${PLAYLISTS[$PLAYLIST_ID]}"
+            echo "Fetching playlist: $PLAYLIST_ID -> $FILE_NAME"
+
+            curl -s "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=${PLAYLIST_ID}&key=${API_KEY}" \
+              | jq '.' > "$FILE_NAME"
+          done
 
       - name: Commit and Push Changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-          git add youtube_playlist.json
-          git diff --cached --quiet || (git commit -m "Update YouTube playlist JSON" && git push)
+          git add playlists/
+          git diff --cached --quiet || (git commit -m "Update YouTube playlists JSON" && git push)
