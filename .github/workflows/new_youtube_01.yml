@@ -44,27 +44,51 @@ jobs:
         env:
           CLIENT_ID: ${{ secrets.CLIENT_ID }}
           CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
-          ORG_ID: ${{ secrets.ORG_ID }}
         run: |
           response=$(curl -s --request POST \
             --url 'https://api.getport.io/v1/auth/access_token' \
-            --header 'Content-Type: application/x-www-form-urlencoded' \
-            --data-urlencode 'grant_type=client_credentials' \
-            --data-urlencode "client_id=$CLIENT_ID" \
-            --data-urlencode "client_secret=$CLIENT_SECRET" \
-            --data-urlencode "scope=your_scope" \
-            --data-urlencode "audience=your_audience")
-
-          access_token=$(echo $response | jq -r '.access_token')
-
+            --header 'Content-Type: application/json' \
+            --data '{"grantType":"client_credentials", "clientId":"'"$CLIENT_ID"'", "clientSecret":"'"$CLIENT_SECRET"'"}')
+      
+          echo "Raw API response: $response"  # Debugging output
+      
+          access_token=$(echo "$response" | jq -r '.access_token')
+      
           if [[ -z "$access_token" || "$access_token" == "null" ]]; then
             echo "Error: Failed to retrieve access token!"
-            echo "Response: $response"
             exit 1
           fi
-
+      
           echo "::add-mask::$access_token"
           echo "access_token=$access_token" >> $GITHUB_OUTPUT
+
+
+      # - name: Request Access Token
+      #   id: get_token
+      #   env:
+      #     CLIENT_ID: ${{ secrets.CLIENT_ID }}
+      #     CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+      #     ORG_ID: ${{ secrets.ORG_ID }}
+      #   run: |
+      #     response=$(curl -s --request POST \
+      #       --url 'https://api.getport.io/v1/auth/access_token' \
+      #       --header 'Content-Type: application/x-www-form-urlencoded' \
+      #       --data-urlencode 'grant_type=client_credentials' \
+      #       --data-urlencode "client_id=$CLIENT_ID" \
+      #       --data-urlencode "client_secret=$CLIENT_SECRET" \
+      #       --data-urlencode "scope=your_scope" \
+      #       --data-urlencode "audience=your_audience")
+
+      #     access_token=$(echo $response | jq -r '.access_token')
+
+      #     if [[ -z "$access_token" || "$access_token" == "null" ]]; then
+      #       echo "Error: Failed to retrieve access token!"
+      #       echo "Response: $response"
+      #       exit 1
+      #     fi
+
+      #     echo "::add-mask::$access_token"
+      #     echo "access_token=$access_token" >> $GITHUB_OUTPUT
 
       - name: Create/Update Port Entities
         env:
