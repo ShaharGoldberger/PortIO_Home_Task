@@ -140,6 +140,4 @@ jobs:
               -d "$PORT_PAYLOAD")
 
             # Check for API errors
-            if echo "$RESPONSE" | jq -e '.error' >/dev/null
-::contentReference[oaicite:0]{index=0}
- 
+            if echo "$RESPONSE" | jq -e '.error' >/dev/null::contentReference[oaicite:0]{index=0}
