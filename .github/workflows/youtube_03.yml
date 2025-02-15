@@ -83,8 +83,13 @@ jobs:
               continue
             fi
 
-            PLAYLIST_TITLE=$(jq -r '.snippet.title // empty' "$FILE")
-            PLAYLIST_DESCRIPTION=$(jq -r '.snippet.description // empty' "$FILE")
+            if [ "$JSON_TYPE" == "array" ]; then
+              PLAYLIST_TITLE="Unknown Playlist Title"
+              PLAYLIST_DESCRIPTION="No description available."
+            else
+              PLAYLIST_TITLE=$(jq -r '.snippet.title // "Unknown Playlist Title"' "$FILE")
+              PLAYLIST_DESCRIPTION=$(jq -r '.snippet.description // "No description available."' "$FILE")
+            fi
 
             # Construct the JSON payload for the playlist
             PLAYLIST_PAYLOAD=$(jq -n \
@@ -144,10 +149,18 @@ jobs:
             fi
             # Process each item in the playlist
             jq -c "$JQ_QUERY" "$FILE" | while read -r ITEM; do
-              VIDEO_ID=$(echo "$ITEM" | jq -r '.snippet.resourceId.videoId')
+              VIDEO_ID=$(echo "$ITEM" | jq -r '.snippet.resourceId.videoId // empty')
+              if [ -z "$VIDEO_ID" ]; then
+                echo "Skipping item with missing videoId."
+                continue
+              fi
               PUBLISHED_AT=$(echo "$ITEM" | jq -r '.snippet.publishedAt')
               CHANNEL_ID=$(echo "$ITEM" | jq -r '.snippet.channelId')
-              TITLE=$(echo "$ITEM" | jq -r '.snippet.title')
+              TITLE=$(echo "$ITEM" | jq -r '.snippet.title // empty')
+              if [ -z "$TITLE" ]; then
+                echo "Skipping item with missing title."
+                continue
+              fi
               DESCRIPTION=$(echo "$ITEM" | jq -r '.snippet.description')
               THUMBNAILS=$(echo "$ITEM" | jq -c '.snippet.thumbnails')
 
