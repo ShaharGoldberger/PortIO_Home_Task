@@ -227,6 +227,6 @@ jobs:
                     playlistId: $playlistId,
                     publishedAt: $publishedAt,
                     channelId: $channelId,
-                    title: $title ::contentReference[oaicite:0]{index=0}
+                    title: $title ::contentReference[oaicite:0]{index=0}'
  
       
