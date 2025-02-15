@@ -165,9 +165,7 @@ jobs:
                     thumbnails: $thumbnails
                   },
                   relations: {
-                    belongs_to: {
-                      identifier: $playlistId
-                    }
+                    belongs_to: $playlistId
                   }
                 }'
               )
