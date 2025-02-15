@@ -84,7 +84,8 @@ jobs:
                   title: $title,
                   description: $description
                 }
-              }')
+              }'
+            )
 
             # Check if the playlist entity already exists
             GET_RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" -X GET "https://api.getport.io/v1/blueprints/youtube_playlist/entities/$PLAYLIST_ID" \
