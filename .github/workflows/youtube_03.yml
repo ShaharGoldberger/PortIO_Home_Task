@@ -18,7 +18,9 @@ jobs:
           mkdir -p playlists
           
           declare -A PLAYLISTS
-          PLAYLISTS["PL2B246C13692AEA56"]="maroon5_short_playlist.json"
+          PLAYLISTS["PLsvoYlzBrLFDoytiaDKjuCK6CNSRty38l"]="film_for_the_future_playlist.json"
+          PLAYLISTS["PLTu_mo3y42N3OZ9y9C7FeWFWeaqCTJK56"]="LSD_playlist.json"
+          PLAYLISTS["PL5ErBr2d3QJH0kbwTQ7HSuzvBb4zIWzhy"]="oleg_berg_playlist.json"
 
           API_KEY="${{ secrets.YOUTUBE_API_KEY }}"
 
