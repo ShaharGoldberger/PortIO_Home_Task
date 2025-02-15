@@ -15,27 +15,27 @@ jobs:
 
       - name: Fetch YouTube Playlists JSON
         run: |
-            mkdir -p playlists
-            
-            declare -A PLAYLISTS
-            PLAYLISTS["PL2B246C13692AEA56&ab"]="maroon5_short_playlist.json"
+          mkdir -p playlists
+          
+          declare -A PLAYLISTS
+          PLAYLISTS["PL2B246C13692AEA56&ab"]="maroon5_short_playlist.json"
 
-            API_KEY="${{ secrets.YOUTUBE_API_KEY }}"
+          API_KEY="${{ secrets.YOUTUBE_API_KEY }}"
 
-            for PLAYLIST_ID in "${!PLAYLISTS[@]}"; do
-              FILE_NAME="playlists/${PLAYLISTS[$PLAYLIST_ID]}"
-              echo "Fetching playlist: $PLAYLIST_ID -> $FILE_NAME"
+          for PLAYLIST_ID in "${!PLAYLISTS[@]}"; do
+            FILE_NAME="playlists/${PLAYLISTS[$PLAYLIST_ID]}"
+            echo "Fetching playlist: $PLAYLIST_ID -> $FILE_NAME"
 
-              RESPONSE=$(curl -s "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=${PLAYLIST_ID}&key=${API_KEY}")
+            RESPONSE=$(curl -s "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=${PLAYLIST_ID}&key=${API_KEY}")
 
-              echo "$RESPONSE" | jq '.' > "$FILE_NAME"
+            echo "$RESPONSE" | jq '.' > "$FILE_NAME"
 
-              if echo "$RESPONSE" | jq -e '.error' >/dev/null; then
-                echo "Error fetching playlist: $PLAYLIST_ID"
-                cat "$FILE_NAME"
-                exit 1
-              fi
-            done
+            if echo "$RESPONSE" | jq -e '.error' >/dev/null; then
+              echo "Error fetching playlist: $PLAYLIST_ID"
+              cat "$FILE_NAME"
+              exit 1
+            fi
+          done
 
       - name: Request Access Token
         id: get_token
