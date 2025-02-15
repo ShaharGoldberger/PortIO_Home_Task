@@ -76,7 +76,7 @@ jobs:
           for FILE in playlists/*.json; do
             echo "Processing $FILE"
 
-            PLAYLIST_ID=$(jq -r '.[0].snippet.playlistId // empty' "$FILE")
+            PLAYLIST_ID=$(jq -r '.items[0].snippet.playlistId // empty' "$FILE")
             if [ -z "$PLAYLIST_ID" ]; then
               echo "Skipping $FILE: PLAYLIST_ID is null or empty."
               echo "Error: No playlist ID found in $FILE. Skipping."
@@ -123,7 +123,7 @@ jobs:
 
             echo "Successfully ${ACTION} playlist entity for ID: $PLAYLIST_ID"
 
-            ITEMS_COUNT=$(jq 'length' "$FILE")
+            ITEMS_COUNT=$(jq '.items | length' "$FILE")
             if [ "$ITEMS_COUNT" -eq 0 ]; then
               echo "No items found in $FILE. Skipping."
               continue
@@ -181,7 +181,7 @@ jobs:
             done
 
             # Collect all video IDs
-            VIDEO_IDS=$(jq -c '[.[].snippet.resourceId.videoId] // []' "$FILE")
+            VIDEO_IDS=$(jq -c '[.items[].snippet.resourceId.videoId] // []' "$FILE")
             if [ -z "$VIDEO_IDS" ] || [ "$VIDEO_IDS" == "[]" ]; then
               echo "Warning: No videos found for playlist $PLAYLIST_ID."
             fi
