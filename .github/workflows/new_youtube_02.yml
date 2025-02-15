@@ -179,6 +179,6 @@ jobs:
               elif [ "$GET_ITEM_RESPONSE" -eq 404 ]; then
                 # Entity does not exist, create it
                 ITEM_RESPONSE=$(curl -s -X POST "https://api.getport.io/v1/blueprints/playlistItem/entities" \
-                  -H "Authorization: Bearer $ACCESS_TOKEN ::contentReference[oaicite:0]{index=0}
-        
-      
+                  -H "Authorization: Bearer $ACCESS_TOKEN ::contentReference[oaicite:0]{index=0}")
+              fi
+            done
