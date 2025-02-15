@@ -34,13 +34,16 @@ jobs:
             while : ; do
               RESPONSE=$(curl -s "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=${PLAYLIST_ID}&key=${API_KEY}&pageToken=${NEXT_PAGE_TOKEN}")
               
-              echo "$RESPONSE" | jq '.items' >> "$FILE_NAME"
+              echo "$RESPONSE" | jq '.items' | jq -s '.' > "$FILE_NAME"
 
               NEXT_PAGE_TOKEN=$(echo "$RESPONSE" | jq -r '.nextPageToken // empty')
               if [ -z "$NEXT_PAGE_TOKEN" ]; then
                 break
               fi
             done
+            
+            echo "Checking JSON structure of $FILE..."
+            jq 'keys' "$FILE"
 
             if jq -e '.error' "$FILE_NAME" >/dev/null; then
               echo "Error fetching playlist: $PLAYLIST_ID"
@@ -78,7 +81,7 @@ jobs:
           for FILE in playlists/*.json; do
             echo "Processing $FILE"
 
-            PLAYLIST_ID=$(jq -r '.items[0].snippet.playlistId // empty' "$FILE")
+            PLAYLIST_ID=$(jq -r '[.items[] | select(.snippet.playlistId != null)][0].snippet.playlistId // empty' "$FILE")
             if [ -z "$PLAYLIST_ID" ]; then
               echo "Skipping $FILE: PLAYLIST_ID is null or empty."
               echo "Error: No playlist ID found in $FILE. Skipping."
