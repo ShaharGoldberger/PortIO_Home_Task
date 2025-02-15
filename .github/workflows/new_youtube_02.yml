@@ -69,6 +69,12 @@ jobs:
             echo "Processing $FILE"
       
             PLAYLIST_ID=$(jq -r '.items[0].snippet.playlistId' "$FILE")
+            # Check if PLAYLIST_ID is empty or unset
+            if [ -z "$PLAYLIST_ID" ]; then
+              echo "Skipping $FILE: PLAYLIST_ID is null or empty."
+              continue
+            fi
+
             PLAYLIST_TITLE=$(jq -r '.items[0].snippet.title' "$FILE")
             PLAYLIST_DESCRIPTION=$(jq -r '.items[0].snippet.description' "$FILE")
       
