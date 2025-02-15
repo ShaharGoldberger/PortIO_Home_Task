@@ -137,43 +137,28 @@ To learn more about blueprints relations,[ ](https://docs.port.io/build-your-sof
 
 **GitHub Workflow for Fetching and Ingesting YouTube Data**
 
-**Fetching YouTube Data**-
+**Fetching YouTube Data**
+1. Using the **YouTube Data API** to retrieve playlist details. Be aware of the JSON that represents the list, in order to extract data from Youtube data API.
+2. Go to[ ](https://console.cloud.google.com/welcome)[Google Cloud Console](https://console.cloud.google.com/welcome) and create the project that we will use for the API.
+3. For the created project we need to enable **Youtube Data API v3** from[ ](https://console.cloud.google.com/apis/library)[here](https://console.cloud.google.com/apis/library).
+4. Create an API key that will be used in the workflow from[ ](https://console.cloud.google.com/apis/credentials)[here](https://console.cloud.google.com/apis/credentials).
+5. Using the JSON schema of the data that we can extract from the Youtube API. We will choose what relevant information to extract.
+6. [ ](https://developers.google.com/youtube/v3/docs?hl=he#Playlists)[Youtube data API documentation](https://developers.google.com/youtube/v3/docs?hl=he#Playlists).
 
-	- Using the **YouTube Data API** to retrieve playlist details. Be aware of the JSON that represents the list, in order to extract data from Youtube data API.
-
-	- Go to[ ](https://console.cloud.google.com/welcome)[Google Cloud Console](https://console.cloud.google.com/welcome) and create the project that we will use for the API.
-
-	- For the created project we need to enable **Youtube Data API v3** from[ ](https://console.cloud.google.com/apis/library)[here](https://console.cloud.google.com/apis/library).
-
-	- Create an API key that will be used in the workflow from[ ](https://console.cloud.google.com/apis/credentials)[here](https://console.cloud.google.com/apis/credentials).
-
-	- Using the JSON schema of the data that we can extract from the Youtube API. We will choose what relevant information to extract.
-
-	- [ ](https://developers.google.com/youtube/v3/docs?hl=he#Playlists)[Youtube data API documentation](https://developers.google.com/youtube/v3/docs?hl=he#Playlists).
-
-
-**How to fetch the data from GitHub workflow-**
-
-	- Go to your GitHub repo and create a folder called- ".github/workflows".
-
-	- Go to settings -> secrets -> actions and then create New repository secret called: **YOUTUBE_API_KEY** with the API key you created in the Google Cloud Console.
-
-	- Create/Use existing workflow yml file and used this call for Youtube API.
-
-	- To fetch the data from Youtube you can use this example:
-
+**How to fetch the data from GitHub workflow**
+1. Go to your GitHub repo and create a folder called- ".github/workflows".
+2. Go to settings -> secrets -> actions and then create New repository secret called: **YOUTUBE_API_KEY** with the API key you created in the Google Cloud Console.
+3. Create/Use existing workflow yml file and used this call for Youtube API.
+4. To fetch the data from Youtube you can use this example:
+```
 PLAYLIST_ID="PLTu_mo3y42N3OZ9y9C7FeWFWeaqCTJK56"
-
 curl -s "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=${PLAYLIST_ID}&key=${ YOUTUBE_API_KEY }" > test_playlist.json
-
-
-**Ingesting Data into Port-**
-
-	- Formatting the extracted data into **Port’s API schema-**
+```
+**Ingesting Data into Port**
+* Formatting the extracted data into **Port’s API schema-**
 
 An example how to do this with a Youtube Playlist blueprint:
 ![image](https://github.com/user-attachments/assets/39c2ec54-c375-4408-bf51-e3dccb9f6163)
-
 
 	- Sending the data to **Port using API requests**-
 
@@ -190,27 +175,18 @@ Is located here-[ ](https://github.com/ShaharGoldberger/PortIO_Home_Task)[https:
 
 Port provides powerful **visualization tools** that allow users to analyze and explore their structured data in a **user-friendly, interactive way**. These tools help users **track trends, monitor key metrics, and gain insights** into their data.
 
-	- To learn more about dashboard widgets for visualization, Go to-[ ](https://docs.port.io/customize-pages-dashboards-and-plugins/dashboards/)[https://docs.port.io/customize-pages-dashboards-and-plugins/dashboards/](https://docs.port.io/customize-pages-dashboards-and-plugins/dashboards/).
-
+  - To learn more about dashboard widgets for visualization, Go to-[ ](https://docs.port.io/customize-pages-dashboards-and-plugins/dashboards/)[https://docs.port.io/customize-pages-dashboards-and-plugins/dashboards/](https://docs.port.io/customize-pages-dashboards-and-plugins/dashboards/).
 
 In this guide, we will provide two visualizations on the Youtube playlist data:
 
-1. 	Pie Chart with the number of videos in the playlist.
-
+1. Pie Chart with the number of videos in the playlist.
 	- I wanted to create a pie chart that represents the spread of the different Privacy Statuses of each video in the playlist, but didn't find a way to access these from the Youtube Playlist Dashboard. This would help find what kind of videos tend to be added to playlists and that way better lists for offering the end user can be generated. \
 ![image](https://github.com/user-attachments/assets/3cee7e4e-90ae-4dfa-aeaa-85fe17cf59a4)
 
-
-2. 	Table of Videos in the playlist.
-
+2. Table of Videos in the playlist.
 	- The table offers a clean and easy to sort view of the videos by name, description, upload time, etc… What I originally meant to do was use the table (and a graph) to portrait the correlation between the location of the video in the playlist and it's number of views, however I didn't find a way to access this data.
 
 ![image](https://github.com/user-attachments/assets/7120682b-317d-4c3d-a6aa-940cebfc606b)
-
-
-
-
-
 
 
 **Port Components-**
