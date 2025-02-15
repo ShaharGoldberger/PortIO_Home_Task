@@ -123,14 +123,26 @@ jobs:
 
             echo "Successfully ${ACTION} playlist entity for ID: $PLAYLIST_ID"
 
-            ITEMS_COUNT=$(jq '.items | length' "$FILE")
+            JSON_TYPE=$(jq -r 'type' "$FILE")
+
+            if [ "$JSON_TYPE" == "array" ]; then
+              echo "Warning: JSON root is an array, expected an object."
+              ITEMS_COUNT=$(jq 'length' "$FILE")
+            else
+              ITEMS_COUNT=$(jq '.items | length' "$FILE")
+            fi
             if [ "$ITEMS_COUNT" -eq 0 ]; then
               echo "No items found in $FILE. Skipping."
               continue
             fi
 
+            if [ "$JSON_TYPE" == "array" ]; then
+              JQ_QUERY='.[]'
+            else
+              JQ_QUERY='.items[]'
+            fi
             # Process each item in the playlist
-            jq -c '.items[]' "$FILE" | while read -r ITEM; do
+            jq -c "$JQ_QUERY" "$FILE" | while read -r ITEM; do
               VIDEO_ID=$(echo "$ITEM" | jq -r '.snippet.resourceId.videoId')
               PUBLISHED_AT=$(echo "$ITEM" | jq -r '.snippet.publishedAt')
               CHANNEL_ID=$(echo "$ITEM" | jq -r '.snippet.channelId')
@@ -178,8 +190,13 @@ jobs:
               echo "Uploaded playlist item: $VIDEO_ID"
             done
 
-            # Collect all video IDs
-            VIDEO_IDS=$(jq -c '[.items[] | select(.snippet.resourceId.videoId != null) | .snippet.resourceId.videoId] // []' "$FILE")
+            # Collect all video IDs            
+            if [ "$JSON_TYPE" == "array" ]; then
+              VIDEO_IDS=$(jq -c '[.[] | select(.snippet.resourceId.videoId != null) | .snippet.resourceId.videoId] // []' "$FILE")
+            else
+              VIDEO_IDS=$(jq -c '[.items[] | select(.snippet.resourceId.videoId != null) | .snippet.resourceId.videoId] // []' "$FILE")
+            fi
+            
             if [ -z "$VIDEO_IDS" ] || [ "$VIDEO_IDS" == "[]" ]; then
               echo "Warning: No videos found for playlist $PLAYLIST_ID."
             fi
