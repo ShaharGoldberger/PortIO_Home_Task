@@ -60,114 +60,114 @@ jobs:
           echo "::add-mask::$access_token"
           echo "access_token=$access_token" >> $GITHUB_OUTPUT
 
-          - name: Create/Update Port Entities
-          env:
-            ACCESS_TOKEN: ${{ steps.get_token.outputs.access_token }}
-          run: |
-            for FILE in playlists/*.json; do
-              echo "Processing $FILE"
-        
-              PLAYLIST_ID=$(jq -r '.items[0].snippet.playlistId' "$FILE")
-              PLAYLIST_TITLE=$(jq -r '.items[0].snippet.title' "$FILE")
-              PLAYLIST_DESCRIPTION=$(jq -r '.items[0].snippet.description' "$FILE")
-        
-              # Construct the JSON payload for the playlist
-              PLAYLIST_PAYLOAD=$(jq -n \
-                --arg id "$PLAYLIST_ID" \
-                --arg title "$PLAYLIST_TITLE" \
-                --arg description "$PLAYLIST_DESCRIPTION" \
+      - name: Create/Update Port Entities
+        env:
+          ACCESS_TOKEN: ${{ steps.get_token.outputs.access_token }}
+        run: |
+          for FILE in playlists/*.json; do
+            echo "Processing $FILE"
+      
+            PLAYLIST_ID=$(jq -r '.items[0].snippet.playlistId' "$FILE")
+            PLAYLIST_TITLE=$(jq -r '.items[0].snippet.title' "$FILE")
+            PLAYLIST_DESCRIPTION=$(jq -r '.items[0].snippet.description' "$FILE")
+      
+            # Construct the JSON payload for the playlist
+            PLAYLIST_PAYLOAD=$(jq -n \
+              --arg id "$PLAYLIST_ID" \
+              --arg title "$PLAYLIST_TITLE" \
+              --arg description "$PLAYLIST_DESCRIPTION" \
+              '{
+                identifier: $id,
+                title: $title,
+                properties: {
+                  id: $id,
+                  title: $title,
+                  description: $description
+                }
+              }'
+            )
+      
+            # Check if the playlist entity already exists
+            GET_RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" -X GET "https://api.getport.io/v1/blueprints/youtube_playlist/entities/$PLAYLIST_ID" \
+              -H "Authorization: Bearer $ACCESS_TOKEN" \
+              -H "Content-Type: application/json")
+      
+            if [ "$GET_RESPONSE" -eq 200 ]; then
+              # Entity exists, perform an update
+              PLAYLIST_RESPONSE=$(curl -s -X PUT "https://api.getport.io/v1/blueprints/youtube_playlist/entities/$PLAYLIST_ID" \
+                -H "Authorization: Bearer $ACCESS_TOKEN" \
+                -H "Content-Type: application/json" \
+                -d "$PLAYLIST_PAYLOAD")
+              ACTION="updated"
+            elif [ "$GET_RESPONSE" -eq 404 ]; then
+              # Entity does not exist, create it
+              PLAYLIST_RESPONSE=$(curl -s -X POST "https://api.getport.io/v1/blueprints/youtube_playlist/entities" \
+                -H "Authorization: Bearer $ACCESS_TOKEN" \
+                -H "Content-Type: application/json" \
+                -d "$PLAYLIST_PAYLOAD")
+              ACTION="created"
+            else
+              echo "Error checking existence of playlist entity for ID: $PLAYLIST_ID"
+              echo "HTTP response code: $GET_RESPONSE"
+              exit 1
+            fi
+      
+            if echo "$PLAYLIST_RESPONSE" | jq -e '.error' >/dev/null; then
+              echo "Error ${ACTION} playlist entity for ID: $PLAYLIST_ID"
+              echo "Response: $PLAYLIST_RESPONSE"
+              exit 1
+            else
+              echo "Successfully ${ACTION} playlist entity for ID: $PLAYLIST_ID"
+            fi
+      
+            # Process each item in the playlist
+            jq -c '.items[]' "$FILE" | while read -r ITEM; do
+              VIDEO_ID=$(echo "$ITEM" | jq -r '.snippet.resourceId.videoId')
+              PUBLISHED_AT=$(echo "$ITEM" | jq -r '.snippet.publishedAt')
+              CHANNEL_ID=$(echo "$ITEM" | jq -r '.snippet.channelId')
+              TITLE=$(echo "$ITEM" | jq -r '.snippet.title')
+              DESCRIPTION=$(echo "$ITEM" | jq -r '.snippet.description')
+              THUMBNAILS=$(echo "$ITEM" | jq -c '.snippet.thumbnails')
+      
+              if [[ "$VIDEO_ID" == "null" || "$TITLE" == "null" ]]; then
+                echo "Skipping invalid playlist item: $ITEM (No valid data)"
+                continue
+              fi
+      
+              # Construct the JSON payload for the playlist item
+              ITEM_PAYLOAD=$(jq -n \
+                --arg id "$VIDEO_ID" \
+                --arg playlistId "$PLAYLIST_ID" \
+                --arg publishedAt "$PUBLISHED_AT" \
+                --arg channelId "$CHANNEL_ID" \
+                --arg title "$TITLE" \
+                --arg description "$DESCRIPTION" \
+                --argjson thumbnails "$THUMBNAILS" \
                 '{
                   identifier: $id,
                   title: $title,
                   properties: {
                     id: $id,
+                    playlistId: $playlistId,
+                    publishedAt: $publishedAt,
+                    channelId: $channelId,
                     title: $title,
-                    description: $description
+                    description: $description,
+                    thumbnails: $thumbnails
+                  },
+                  relations: {
+                    belongs_to: {
+                      identifier: $playlistId
+                    }
                   }
                 }'
               )
-        
-              # Check if the playlist entity already exists
-              GET_RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" -X GET "https://api.getport.io/v1/blueprints/youtube_playlist/entities/$PLAYLIST_ID" \
+      
+              # Check if the playlist item entity already exists
+              GET_ITEM_RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" -X GET "https://api.getport.io/v1/blueprints/playlistItem/entities/$VIDEO_ID" \
                 -H "Authorization: Bearer $ACCESS_TOKEN" \
                 -H "Content-Type: application/json")
-        
-              if [ "$GET_RESPONSE" -eq 200 ]; then
-                # Entity exists, perform an update
-                PLAYLIST_RESPONSE=$(curl -s -X PUT "https://api.getport.io/v1/blueprints/youtube_playlist/entities/$PLAYLIST_ID" \
-                  -H "Authorization: Bearer $ACCESS_TOKEN" \
-                  -H "Content-Type: application/json" \
-                  -d "$PLAYLIST_PAYLOAD")
-                ACTION="updated"
-              elif [ "$GET_RESPONSE" -eq 404 ]; then
-                # Entity does not exist, create it
-                PLAYLIST_RESPONSE=$(curl -s -X POST "https://api.getport.io/v1/blueprints/youtube_playlist/entities" \
-                  -H "Authorization: Bearer $ACCESS_TOKEN" \
-                  -H "Content-Type: application/json" \
-                  -d "$PLAYLIST_PAYLOAD")
-                ACTION="created"
-              else
-                echo "Error checking existence of playlist entity for ID: $PLAYLIST_ID"
-                echo "HTTP response code: $GET_RESPONSE"
-                exit 1
-              fi
-        
-              if echo "$PLAYLIST_RESPONSE" | jq -e '.error' >/dev/null; then
-                echo "Error ${ACTION} playlist entity for ID: $PLAYLIST_ID"
-                echo "Response: $PLAYLIST_RESPONSE"
-                exit 1
-              else
-                echo "Successfully ${ACTION} playlist entity for ID: $PLAYLIST_ID"
-              fi
-        
-              # Process each item in the playlist
-              jq -c '.items[]' "$FILE" | while read -r ITEM; do
-                VIDEO_ID=$(echo "$ITEM" | jq -r '.snippet.resourceId.videoId')
-                PUBLISHED_AT=$(echo "$ITEM" | jq -r '.snippet.publishedAt')
-                CHANNEL_ID=$(echo "$ITEM" | jq -r '.snippet.channelId')
-                TITLE=$(echo "$ITEM" | jq -r '.snippet.title')
-                DESCRIPTION=$(echo "$ITEM" | jq -r '.snippet.description')
-                THUMBNAILS=$(echo "$ITEM" | jq -c '.snippet.thumbnails')
-        
-                if [[ "$VIDEO_ID" == "null" || "$TITLE" == "null" ]]; then
-                  echo "Skipping invalid playlist item: $ITEM (No valid data)"
-                  continue
-                fi
-        
-                # Construct the JSON payload for the playlist item
-                ITEM_PAYLOAD=$(jq -n \
-                  --arg id "$VIDEO_ID" \
-                  --arg playlistId "$PLAYLIST_ID" \
-                  --arg publishedAt "$PUBLISHED_AT" \
-                  --arg channelId "$CHANNEL_ID" \
-                  --arg title "$TITLE" \
-                  --arg description "$DESCRIPTION" \
-                  --argjson thumbnails "$THUMBNAILS" \
-                  '{
-                    identifier: $id,
-                    title: $title,
-                    properties: {
-                      id: $id,
-                      playlistId: $playlistId,
-                      publishedAt: $publishedAt,
-                      channelId: $channelId,
-                      title: $title,
-                      description: $description,
-                      thumbnails: $thumbnails
-                    },
-                    relations: {
-                      belongs_to: {
-                        identifier: $playlistId
-                      }
-                    }
-                  }'
-                )
-        
-                # Check if the playlist item entity already exists
-                GET_ITEM_RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" -X GET "https://api.getport.io/v1/blueprints/playlistItem/entities/$VIDEO_ID" \
-                  -H "Authorization: Bearer $ACCESS_TOKEN" \
-                  -H "Content-Type: application/json")
-        
-                if [ "$GET_ITEM_RESPONSE" -eq 200 ]; then
-                  # Entity exists, perform 
-        
+      
+              if [ "$GET_ITEM_RESPONSE" -eq 200 ]; then
+                # Entity exists, perform 
+      
