@@ -83,8 +83,8 @@ jobs:
               continue
             fi
 
-            PLAYLIST_TITLE=$(jq -r '.items[0].snippet.title' "$FILE")
-            PLAYLIST_DESCRIPTION=$(jq -r '.items[0].snippet.description' "$FILE")
+            PLAYLIST_TITLE=$(jq -r '.snippet.title // empty' "$FILE")
+            PLAYLIST_DESCRIPTION=$(jq -r '.snippet.description // empty' "$FILE")
 
             # Construct the JSON payload for the playlist
             PLAYLIST_PAYLOAD=$(jq -n \
@@ -131,6 +131,7 @@ jobs:
             else
               ITEMS_COUNT=$(jq '.items | length' "$FILE")
             fi
+
             if [ "$ITEMS_COUNT" -eq 0 ]; then
               echo "No items found in $FILE. Skipping."
               continue
@@ -177,7 +178,7 @@ jobs:
                     thumbnails: $thumbnails
                   },
                   relations: {
-                    belongs_to: $playlistId
+                    belongs_to: "$playlistId"
                   }
                 }'
               )
@@ -197,8 +198,12 @@ jobs:
               VIDEO_IDS=$(jq -c '[.items[] | select(.snippet.resourceId.videoId != null) | .snippet.resourceId.videoId] // []' "$FILE")
             fi
             
-            if [ -z "$VIDEO_IDS" ] || [ "$VIDEO_IDS" == "[]" ]; then
-              echo "Warning: No videos found for playlist $PLAYLIST_ID."
+            # if [ -z "$VIDEO_IDS" ] || [ "$VIDEO_IDS" == "[]" ]; then
+            #   echo "Warning: No videos found for playlist $PLAYLIST_ID."
+            # fi
+            if ! echo "$VIDEO_IDS" | jq empty; then
+              echo "Error: VIDEO_IDS is not valid JSON."
+              continue
             fi
 
             # Update youtube_playlist entity with videos_in_playlist
