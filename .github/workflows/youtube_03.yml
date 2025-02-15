@@ -169,10 +169,12 @@ jobs:
                 continue
               fi
 
+              # Ensure `playlistId` contains only allowed characters
+              SAFE_PLAYLIST_ID=$(echo "$PLAYLIST_ID" | tr -d '[:space:]')
               # Construct the JSON payload for the playlist item
               ITEM_PAYLOAD=$(jq -n \
                 --arg id "$VIDEO_ID" \
-                --arg playlistId "$PLAYLIST_ID" \
+                --arg playlistId "$SAFE_PLAYLIST_ID" \
                 --arg publishedAt "$PUBLISHED_AT" \
                 --arg channelId "$CHANNEL_ID" \
                 --arg title "$TITLE" \
