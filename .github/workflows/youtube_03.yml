@@ -42,8 +42,8 @@ jobs:
               fi
             done
             
-            echo "Checking JSON structure of $FILE..."
-            jq 'keys' "$FILE"
+            echo "Checking JSON structure of $FILE_NAME..."
+            jq 'keys' "$FILE_NAME"
 
             if jq -e '.error' "$FILE_NAME" >/dev/null; then
               echo "Error fetching playlist: $PLAYLIST_ID"
