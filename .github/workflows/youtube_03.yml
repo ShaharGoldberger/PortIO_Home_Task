@@ -83,8 +83,8 @@ jobs:
               continue
             fi
 
-            PLAYLIST_TITLE=$(jq -r '.[0].snippet.title' "$FILE")
-            PLAYLIST_DESCRIPTION=$(jq -r '.[0].snippet.description' "$FILE")
+            PLAYLIST_TITLE=$(jq -r '.items[0].snippet.title' "$FILE")
+            PLAYLIST_DESCRIPTION=$(jq -r '.items[0].snippet.description' "$FILE")
 
             # Construct the JSON payload for the playlist
             PLAYLIST_PAYLOAD=$(jq -n \
@@ -181,7 +181,7 @@ jobs:
             done
 
             # Collect all video IDs
-            VIDEO_IDS=$(jq -c '[.items[].snippet.resourceId.videoId] // []' "$FILE")
+            VIDEO_IDS=$(jq -c '[.items[] | select(.snippet.resourceId.videoId != null) | .snippet.resourceId.videoId] // []' "$FILE")
             if [ -z "$VIDEO_IDS" ] || [ "$VIDEO_IDS" == "[]" ]; then
               echo "Warning: No videos found for playlist $PLAYLIST_ID."
             fi
