@@ -130,7 +130,7 @@ jobs:
             fi
 
             # Process each item in the playlist
-            jq -c '.[]' "$FILE" | while read -r ITEM; do
+            jq -c '.items[]' "$FILE" | while read -r ITEM; do
               VIDEO_ID=$(echo "$ITEM" | jq -r '.snippet.resourceId.videoId')
               PUBLISHED_AT=$(echo "$ITEM" | jq -r '.snippet.publishedAt')
               CHANNEL_ID=$(echo "$ITEM" | jq -r '.snippet.channelId')
