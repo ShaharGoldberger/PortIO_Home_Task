@@ -126,6 +126,14 @@ jobs:
             else
               echo "Successfully ${ACTION} playlist entity for ID: $PLAYLIST_ID"
             fi
+
+            # Check if the 'items' array exists and is not null
+            ITEMS_COUNT=$(jq '.items | length' "$FILE")
+
+            if [ "$ITEMS_COUNT" -eq 0 ]; then
+              echo "No items found in $FILE. Skipping."
+              continue
+            fi
       
             # Process each item in the playlist
             jq -c '.items[]' "$FILE" | while read -r ITEM; do
