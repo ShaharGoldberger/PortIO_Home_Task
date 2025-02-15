@@ -70,9 +70,11 @@ jobs:
             PLAYLIST_ID=$(jq -r '.items[0].snippet.playlistId' "$FILE")
             PLAYLIST_TITLE=$(jq -r '.items[0].snippet.title' "$FILE")
             PLAYLIST_DESCRIPTION=$(jq -r '.items[0].snippet.description' "$FILE")
-
             # Construct the JSON payload for the playlist
-            PLAYLIST_PAYLOAD=$(jq -n --arg id "$PLAYLIST_ID" --arg title "$PLAYLIST_TITLE" --arg description "$PLAYLIST_DESCRIPTION" \
+            PLAYLIST_PAYLOAD=$(jq -n \
+              --arg id "$PLAYLIST_ID" \
+              --arg title "$PLAYLIST_TITLE" \
+              --arg description "$PLAYLIST_DESCRIPTION" \
               '{
                 identifier: $id,
                 title: $title,
@@ -81,8 +83,7 @@ jobs:
                   title: $title,
                   description: $description
                 }
-              }'
-            )
+              }')
 
             # Check if the playlist entity already exists
             GET_RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" -X GET "https://api.getport.io/v1/blueprints/youtube_playlist/entities/$PLAYLIST_ID" \
