@@ -34,17 +34,14 @@ jobs:
             while : ; do
               RESPONSE=$(curl -s "https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=${PLAYLIST_ID}&key=${API_KEY}&pageToken=${NEXT_PAGE_TOKEN}")
               
-              echo "$RESPONSE" | jq '.items' | jq -s '.' > "$FILE_NAME"
+              # echo "$RESPONSE" | jq '.items' | jq -s '.' > "$FILE_NAME"
+              echo "$RESPONSE" | jq '{kind, etag, items, pageInfo}' > "$FILE_NAME"
 
               NEXT_PAGE_TOKEN=$(echo "$RESPONSE" | jq -r '.nextPageToken // empty')
               if [ -z "$NEXT_PAGE_TOKEN" ]; then
                 break
               fi
             done
-            
-            echo "Checking JSON structure of $FILE_NAME..."
-            jq 'keys' "$FILE_NAME"
-
             if jq -e '.error' "$FILE_NAME" >/dev/null; then
               echo "Error fetching playlist: $PLAYLIST_ID"
               cat "$FILE_NAME"
@@ -81,7 +78,14 @@ jobs:
           for FILE in playlists/*.json; do
             echo "Processing $FILE"
 
-            PLAYLIST_ID=$(jq -r '[.items[] | select(.snippet.playlistId != null)][0].snippet.playlistId // empty' "$FILE")
+            # PLAYLIST_ID=$(jq -r '[.items[] | select(.snippet.playlistId != null)][0].snippet.playlistId // empty' "$FILE")
+            JSON_TYPE=$(jq -r 'type' "$FILE")
+
+            if [[ "$JSON_TYPE" == "array" ]]; then
+              PLAYLIST_ID=$(jq -r '.[0].snippet.playlistId // empty' "$FILE")
+            else
+              PLAYLIST_ID=$(jq -r '.items[0].snippet.playlistId // empty' "$FILE")
+            fi
             if [ -z "$PLAYLIST_ID" ]; then
               echo "Skipping $FILE: PLAYLIST_ID is null or empty."
               echo "Error: No playlist ID found in $FILE. Skipping."
@@ -136,8 +140,9 @@ jobs:
             JSON_TYPE=$(jq -r 'type' "$FILE")
 
             if [ "$JSON_TYPE" == "array" ]; then
-              echo "Warning: JSON root is an array, expected an object."
-              ITEMS_COUNT=$(jq 'length' "$FILE")
+              echo "Error: Expected object but found array in $FILE_NAME"
+              jq '.' "$FILE_NAME"  # Print for debugging
+              continue
             else
               ITEMS_COUNT=$(jq '.items | length' "$FILE")
             fi
