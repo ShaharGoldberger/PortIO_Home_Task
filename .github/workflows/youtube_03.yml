@@ -76,9 +76,10 @@ jobs:
           for FILE in playlists/*.json; do
             echo "Processing $FILE"
 
-            PLAYLIST_ID=$(jq -r '.[0].snippet.playlistId' "$FILE")
+            PLAYLIST_ID=$(jq -r '.[0].snippet.playlistId // empty' "$FILE")
             if [ -z "$PLAYLIST_ID" ]; then
               echo "Skipping $FILE: PLAYLIST_ID is null or empty."
+              echo "Error: No playlist ID found in $FILE. Skipping."
               continue
             fi
 
@@ -180,7 +181,10 @@ jobs:
             done
 
             # Collect all video IDs
-            VIDEO_IDS=$(jq -c '[.[].snippet.resourceId.videoId]' "$FILE")
+            VIDEO_IDS=$(jq -c '[.[].snippet.resourceId.videoId] // []' "$FILE")
+            if [ -z "$VIDEO_IDS" ] || [ "$VIDEO_IDS" == "[]" ]; then
+              echo "Warning: No videos found for playlist $PLAYLIST_ID."
+            fi
 
             # Update youtube_playlist entity with videos_in_playlist
             UPDATE_PLAYLIST_PAYLOAD=$(jq -n \
